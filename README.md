@@ -1,4 +1,4 @@
 dockerize_tophat
 =================
 
-dockermize the tophat
+dockerize the tophat
