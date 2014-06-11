@@ -1,9 +1,9 @@
-### Try to dockermize the Tophat version 2.0.11.
+### Try to dockerize the Tophat version 2.0.11.
 ## 1.import the samtools from the images registry.
 
 ####
 # I tried to compile the boost_1_55_0 for the tophat, but it seems that there some trivial errors when compiling it, also the time for compiling is too long for a laptop.
-# Therefore, I use the already exited the dockermized Tophat which with samtools installe # to be my base image.
+# Therefore, I use the already exited the dockerized Tophat which with samtools installe # to be my base image.
 ####
 
 From octavianus90/samtools-0.1.19
