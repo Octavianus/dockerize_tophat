@@ -1,8 +1,8 @@
-### Try to dockermize the Tophat.
+### Try to dockermize the Tophat version 2.0.11.
 ## 1.import the samtools from the images registry.
 
 ####
-# I tried to compile the boost_1_55_0 for the tophat, but it seems that there some trivial# errors when compiling it, also the time for compiling is too long for a laptop.
+# I tried to compile the boost_1_55_0 for the tophat, but it seems that there some trivial errors when compiling it, also the time for compiling is too long for a laptop.
 # Therefore, I use the already exited the dockermized Tophat which with samtools installe # to be my base image.
 ####
 
@@ -19,6 +19,8 @@ RUN tar zxvf boost_1_55_0.tar.gz
 WORKDIR boost_1_55_0
 RUN ./bootstrap.sh
 RUN apt-get install -y g++
+
+#!!! Problem here the follwing command took almost 15 minutes to compile, and at the end, it does not report useful error code.
 RUN ./bjam --prefix=/home/vagrant/boost_1_55_0 link=static stage install
 
 ## 3.Install Tophat
@@ -26,3 +28,4 @@ RUN wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.0.11.tar.gz
 RUN tar zxvf tophat-2.0.11.tar.gz
 WORKDIR tophat-2.0.11
 RUN ./configure
+
